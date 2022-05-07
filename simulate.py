@@ -8,6 +8,6 @@ planeId = p.loadURDF("plane.urdf")
 p.loadSDF("boxes.sdf")
 for i in range (1000):
     print(i)
-    time.sleep(1/60)
+    time.sleep(1/1000)
     p.stepSimulation()
 p.disconnect()
