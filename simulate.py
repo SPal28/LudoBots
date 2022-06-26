@@ -9,10 +9,6 @@ planeId = p.loadURDF("body.urdf")
 def robotId():
     open('body.urdf').readlines()
 robotId()
-    # Joints: Step 18
-    # Opened the file and read it 
-    # How do I read this line into an object?
-    # Should I call this function back too?
 p.loadSDF("world.sdf")
 for i in range (2000):
     print(i)
