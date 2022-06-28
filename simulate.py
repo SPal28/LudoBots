@@ -6,11 +6,11 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0,0,-9.8)
 planeId = p.loadURDF("plane.urdf")
 planeId = p.loadURDF("body.urdf")
-def robotId():
-    open('body.urdf').readlines()
-robotId()
+# def robotId():
+    # open('body.urdf').readlines()
+# robotId()
 p.loadSDF("world.sdf")
-for i in range (2000):
+for i in range (1000):
     print(i)
     time.sleep(1/1000)
     p.stepSimulation()
