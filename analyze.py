@@ -1,5 +1,6 @@
 import numpy 
 import matplotlib.pyplot 
-numpy.load("data/backLegSensorValues.npy", mmap_mode=None, allow_pickle=False, fix_imports=True, encoding='ASCII')
+numpy.load("datavalues.npy", mmap_mode=None, allow_pickle=False, fix_imports=True, encoding='ASCII')
+plot( 'ylabel', data=backLegSensorValues)
 print (backLegSensorValues)
 matplotlib.pyplot.show()
