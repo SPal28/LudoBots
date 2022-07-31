@@ -24,6 +24,12 @@ for i in range (1000):
     frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("Frontleg")
     print(backLegSensorValues)
     print(frontLegSensorValues)
+    pyrosim.Set_Motor_For_Joint(
+    bodyIndex = ...,
+    jointName = "...",
+    controlMode = ...,
+    targetPosition = ...,
+    maxForce = ...)
 arr = backLegSensorValues
 arry = frontLegSensorValues
 numpy.save("datavalues.npy", arr, allow_pickle=True, fix_imports=True)
