@@ -3,14 +3,17 @@ import time
 import pybullet as p
 import numpy as numpy
 import pyrosim.pyrosim as pyrosim
+import math
+math.pi
+pi = math.pi
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0,0,-9.8)
 planeId = p.loadURDF("plane.urdf")
 robotId = p.loadURDF("body.urdf")
-# def robotId():
-    # open('body.urdf').readlines()
-# robotId()
+
+robot = robotId #is this right??
+
 p.loadSDF("world.sdf")
 pyrosim.Prepare_To_Simulate(robotId)
 backLegSensorValues = numpy.zeros(1000)
@@ -25,11 +28,11 @@ for i in range (1000):
     print(backLegSensorValues)
     print(frontLegSensorValues)
     pyrosim.Set_Motor_For_Joint(
-    bodyIndex = ...,
-    jointName = "...",
-    controlMode = ...,
-    targetPosition = ...,
-    maxForce = ...)
+    bodyIndex = robot,
+    jointName = b'Torso_Backleg',
+    controlMode = p.POSITION_CONTROL,
+    targetPosition = +pi/4,
+    maxForce = 500)
 arr = backLegSensorValues
 arry = frontLegSensorValues
 numpy.save("datavalues.npy", arr, allow_pickle=True, fix_imports=True)
