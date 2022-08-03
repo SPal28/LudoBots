@@ -31,6 +31,12 @@ for i in range (1000):
     bodyIndex = robot,
     jointName = b'Torso_Backleg',
     controlMode = p.POSITION_CONTROL,
+    targetPosition = -pi/4,
+    maxForce = 500)
+    pyrosim.Set_Motor_For_Joint(
+    bodyIndex = robot,
+    jointName = b'Torso_Frontleg',
+    controlMode = p.POSITION_CONTROL,
     targetPosition = +pi/4,
     maxForce = 500)
 arr = backLegSensorValues
