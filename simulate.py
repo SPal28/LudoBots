@@ -4,8 +4,12 @@ import pybullet as p
 import numpy as numpy
 import pyrosim.pyrosim as pyrosim
 import math
+import random
+
 math.pi
 pi = math.pi
+math.degrees(math.pi/2) 
+90.0
 physicsClient = p.connect(p.GUI)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0,0,-9.8)
@@ -31,13 +35,13 @@ for i in range (1000):
     bodyIndex = robot,
     jointName = b'Torso_Backleg',
     controlMode = p.POSITION_CONTROL,
-    targetPosition = -pi/4,
+    targetPosition = range(-pi/2, pi/2),
     maxForce = 500)
     pyrosim.Set_Motor_For_Joint(
     bodyIndex = robot,
     jointName = b'Torso_Frontleg',
     controlMode = p.POSITION_CONTROL,
-    targetPosition = +pi/4,
+    targetPosition = range(-pi/2, pi/2),
     maxForce = 500)
 arr = backLegSensorValues
 arry = frontLegSensorValues
