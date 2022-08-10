@@ -35,13 +35,13 @@ for i in range (1000):
     bodyIndex = robot,
     jointName = b'Torso_Backleg',
     controlMode = p.POSITION_CONTROL,
-    targetPosition = range(-pi/2, pi/2),
+    targetPosition = random.random()*math.pi - math.pi/2.0,
     maxForce = 500)
     pyrosim.Set_Motor_For_Joint(
     bodyIndex = robot,
     jointName = b'Torso_Frontleg',
     controlMode = p.POSITION_CONTROL,
-    targetPosition = range(-pi/2, pi/2),
+    targetPosition = random.random()*math.pi - math.pi/2.0,
     maxForce = 500)
 arr = backLegSensorValues
 arry = frontLegSensorValues
