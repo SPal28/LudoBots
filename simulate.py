@@ -44,7 +44,7 @@ for i in range (1000):
     targetPosition = random.random()*math.pi - math.pi/3,
     maxForce = 500)
 
-targetAngles = numpy.sin(numpy.array((0., 30., 45., 60., 90., 120., 135., 150., 180., 210., 225., 240., 270., 300., 315., 330., 360.)) * 1000. )
+targetAngles = numpy.sin(numpy.array((-45., -34., -22., -11., 0., 11., 22., 34., 45.)) * 1000. )
 numpy.save("targetAngleValues", targetAngles, allow_pickle=True, fix_imports=True)
 
 arr = backLegSensorValues
