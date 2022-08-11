@@ -10,9 +10,9 @@ pi = math.pi
 #matplotlib.pyplot.legend()
 
 targetAngleValues = numpy.load("targetAngleValues.npy")
-x = numpy.linspace(0, 2 * pi, 201)
+x = numpy.linspace(-pi/4, pi/4, 201)
 plt.plot(x, numpy.sin(x))
-plt.xlabel('Angle [rad]')
+plt.xlabel('steps')
 plt.ylabel('sin(x)')
 plt.axis('tight')
 plt.show()
