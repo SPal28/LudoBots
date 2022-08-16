@@ -44,10 +44,11 @@ for i in range (1000):
     targetPosition = random.random()*math.pi - math.pi/3,
     maxForce = 500)
 
+
 targetAngles = numpy.sin(numpy.array((-45., -30., 0., 30., 45.)) * pi/ 180. )
 NUM_ITR = 1000
 targetAngles = numpy.sin(numpy.linspace(0, pi * 2, NUM_ITR))
-numpy.save("targetAngleValues", targetAngles, allow_pickle=True, fix_imports=True)
+# numpy.save("targetAngleValues", targetAngles, allow_pickle=True, fix_imports=True)
 
 
 
