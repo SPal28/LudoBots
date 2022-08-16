@@ -12,7 +12,7 @@ NUM_ITR = 1000
 #matplotlib.pyplot.legend()
 
 targetAngleValues = numpy.load("targetAngleValues.npy")
-x = numpy.linspace(0, pi * 2, NUM_ITR)
+x = numpy.linspace(0, 1000, NUM_ITR)
 plt.plot(x, targetAngleValues)
 plt.xlabel('steps')
 plt.ylabel('sin(x)')
