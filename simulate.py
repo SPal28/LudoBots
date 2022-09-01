@@ -23,9 +23,17 @@ pyrosim.Prepare_To_Simulate(robotId)
 backLegSensorValues = numpy.zeros(1000)
 frontLegSensorValues = numpy.zeros(1000)
 
+
+NUM_ITR = 1000
+targetAngles = numpy.sin(numpy.linspace(0, pi * 2, NUM_ITR))
+targetAngles = targetAngles * pi/4
+print(targetAngles)
+# numpy.save("targetAngleValues", targetAngles, allow_pickle=True, fix_imports=True)
+
+
 for i in range (1000):
     print(i)
-    time.sleep(1/1000)
+    time.sleep(1/240)
     p.stepSimulation()
     backLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("Backleg")
     frontLegSensorValues[i] = pyrosim.Get_Touch_Sensor_Value_For_Link("Frontleg")
@@ -35,19 +43,17 @@ for i in range (1000):
     bodyIndex = robot,
     jointName = b'Torso_Backleg',
     controlMode = p.POSITION_CONTROL,
-    targetPosition = random.random()*math.pi - math.pi/3,
+    targetPosition = targetAngles[i],
     maxForce = 500)
     pyrosim.Set_Motor_For_Joint(
     bodyIndex = robot,
     jointName = b'Torso_Frontleg',
     controlMode = p.POSITION_CONTROL,
-    targetPosition = random.random()*math.pi - math.pi/3,
+    targetPosition = targetAngles[i],
     maxForce = 500)
 
 
-targetAngles = numpy.sin(numpy.array((-45., -30., 0., 30., 45.)) * pi/ 180. )
-NUM_ITR = 1000
-targetAngles = numpy.sin(numpy.linspace(0, pi * 2, NUM_ITR))
+
 # numpy.save("targetAngleValues", targetAngles, allow_pickle=True, fix_imports=True)
 
 
