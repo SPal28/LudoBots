@@ -16,20 +16,25 @@ p.setGravity(0,0,-9.8)
 planeId = p.loadURDF("plane.urdf")
 robotId = p.loadURDF("body.urdf")
 
-robot = robotId #is this right??
+robot = robotId 
 
 p.loadSDF("world.sdf")
 pyrosim.Prepare_To_Simulate(robotId)
 backLegSensorValues = numpy.zeros(1000)
 frontLegSensorValues = numpy.zeros(1000)
 
+amplitude = pi/4
+frequency = 10
+phaseOffset = 0
 
 NUM_ITR = 1000
 targetAngles = numpy.sin(numpy.linspace(0, pi * 2, NUM_ITR))
 targetAngles = targetAngles * pi/4
+targetAngles = amplitude * numpy.sin(frequency * i + phaseOffset)
 print(targetAngles)
 # numpy.save("targetAngleValues", targetAngles, allow_pickle=True, fix_imports=True)
 
+exit()
 
 for i in range (1000):
     print(i)
