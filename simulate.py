@@ -27,12 +27,14 @@ amplitude = pi/4
 frequency = 10
 phaseOffset = 0
 
+
 NUM_ITR = 1000
 targetAngles = numpy.sin(numpy.linspace(0, pi * 2, NUM_ITR))
 targetAngles = targetAngles * pi/4
 targetAngles = amplitude * numpy.sin(frequency * i + phaseOffset)
+
 print(targetAngles)
-# numpy.save("targetAngleValues", targetAngles, allow_pickle=True, fix_imports=True)
+numpy.save("targetAngleValues", targetAngles, allow_pickle=True, fix_imports=True)
 
 exit()
 
