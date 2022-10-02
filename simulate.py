@@ -5,6 +5,7 @@ import numpy as numpy
 import pyrosim.pyrosim as pyrosim
 import math
 import random
+import constants as c
 
 math.pi
 pi = math.pi
@@ -23,15 +24,15 @@ pyrosim.Prepare_To_Simulate(robotId)
 backLegSensorValues = numpy.zeros(1000)
 frontLegSensorValues = numpy.zeros(1000)
 
-back_amplitude = pi/4
-back_frequency = 10
-back_phaseOffset = pi/4
+back_amplitude = c.back_amplitude
+back_frequency = c.back_frequency
+back_phaseOffset = c.back_phaseOffset
 
-front_amplitude = pi/4
-front_frequency = 10
-front_phaseOffset = 0
+front_amplitude = c.front_amplitude
+front_frequency = c.front_frequency
+front_phaseOffset = c.front_phaseOffset
 
-NUM_ITR = 1000
+NUM_ITR = c.NUM_ITR
 back_targetAngles = back_amplitude * numpy.sin(back_frequency * numpy.linspace(0, pi * 2, NUM_ITR)+ back_phaseOffset)
 front_targetAngles = front_amplitude * numpy.sin(front_frequency * numpy.linspace(0, pi * 2, NUM_ITR)+ front_phaseOffset)
 
