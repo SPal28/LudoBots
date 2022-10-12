@@ -1,4 +1,5 @@
-pass
+simulation = SIMULATION()
+from simulation import SIMULATION
 
 # import pybullet_data
 # import time
