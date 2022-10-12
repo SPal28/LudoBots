@@ -1,4 +1,4 @@
 class SIMULATION:
     def __init__(self):
-        pass
-simulation = SIMULATION()
+        self.world = WORLD()
+        self.world = ROBOT()
